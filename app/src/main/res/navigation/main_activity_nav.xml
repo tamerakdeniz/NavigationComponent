@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homePageFragment">
+
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.navigationcomponent.ui.fragment.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/pageATransition"
+            app:destination="@id/pageAFragment" />
+        <action
+            android:id="@+id/pageXTransition"
+            app:destination="@id/pageXFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageAFragment"
+        android:name="com.example.navigationcomponent.ui.fragment.PageAFragment"
+        android:label="fragment_page_a"
+        tools:layout="@layout/fragment_page_a" >
+        <action
+            android:id="@+id/pageBTransition"
+            app:destination="@id/pageBFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageBFragment"
+        android:name="com.example.navigationcomponent.ui.fragment.PageBFragment"
+        android:label="fragment_page_b"
+        tools:layout="@layout/fragment_page_b" >
+        <action
+            android:id="@+id/pageBtoYTransition"
+            app:destination="@id/pageYFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageXFragment"
+        android:name="com.example.navigationcomponent.ui.fragment.PageXFragment"
+        android:label="fragment_page_x"
+        tools:layout="@layout/fragment_page_x" >
+        <action
+            android:id="@+id/pageYTransition"
+            app:destination="@id/pageYFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/pageYFragment"
+        android:name="com.example.navigationcomponent.ui.fragment.PageYFragment"
+        android:label="fragment_page_y"
+        tools:layout="@layout/fragment_page_y" />
+</navigation>
